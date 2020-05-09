@@ -7,6 +7,7 @@ import org.eclipse.jetty.servlet.ServletHolder;
 import org.glassfish.jersey.servlet.ServletContainer;
 
 import java.net.URI;
+import java.net.URL;
 
 public class Main {
     public static void main(String[] args) {
@@ -16,11 +17,11 @@ public class Main {
     public void run() {
         Server server = null;
         try {
-            URI resourceBase = this.getClass().getResource("/webroot").toURI();
+            URL resourceBase = this.getClass().getResource("/webroot");
             ServletContextHandler context =
                     new ServletContextHandler(ServletContextHandler.SESSIONS);
             context.setContextPath("/");
-            context.setResourceBase(resourceBase.toASCIIString());
+            context.setResourceBase(resourceBase.toString());
 
             server = new Server(8080);
             server.setHandler(context);
