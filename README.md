@@ -2,16 +2,25 @@
 
 A simple Jersey JAX-RS application on embedded Jetty.
 
-## Instructions
+## Usage
+
+Build and run the application:
 
 ```
 % mvn package
 % java -jar target/jersey-jetty-sample.jar
 ```
 
+Then you can access the deployed resources:
+
 ```
-% curl -X GET "http://localhost:8080/hello?name=jersey"
-hello, jersey!
+% curl -X GET "http://localhost:8080/"
+<!DOCTYPE html><html><body>Hello!</body></html>
+```
+
+```
+% curl -X GET "http://localhost:8080/api/hello?name=Jersey"
+Hello, Jersey!
 ```
 
 ## References

@@ -9,6 +9,6 @@ import javax.ws.rs.QueryParam;
 public class HelloResource {
     @GET
     public String hello(@QueryParam("name") @DefaultValue("world") String name) {
-        return "hello, " + name + "!";
+        return "Hello, " + name + "!";
     }
 }
